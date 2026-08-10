@@ -1,12 +1,22 @@
-nome = input("Digite seu nome: ").strip()
-idade = int(input("Digite sua idade: "))
-turma = input("Digite sua turma: ").strip().upper()
-altura = float(input("Digite sua altura: ").replace(",", "."))
-programou = input("Já programou? (sim/não): ").strip().lower() == "sim"
+# Exercício 02 — Operadores e cálculos em Python
+nota1 = float(input("Digite a primeira nota: ").replace(",", "."))
+nota2 = float(input("Digite a segunda nota: ").replace(",", "."))
+minutos_estudo = int(input("Digite o total de minutos estudados: "))
+questoes_corretas = int(input("Digite a quantidade de questões corretas: "))
+total_questoes = int(input("Digite o total de questões: "))
 
-print("\n--- FICHA DO ALUNO ---")
-print(f"Nome: {nome}")
-print(f"Idade: {idade} anos")
-print(f"Turma: {turma}")
-print(f"Altura: {altura:.2f} m")
-print(f"Já programou: {programou}")
+soma_notas = nota1 + nota2
+media = round(soma_notas / 2, 2)
+diferenca = abs(nota1 - nota2)
+horas_estudo = minutos_estudo // 60
+minutos_restantes = minutos_estudo % 60
+aproveitamento = round((questoes_corretas / total_questoes) * 100, 1)
+pontos_bonus = questoes_corretas ** 2
+
+print("\n--- RESUMO DE DESEMPENHO ---")
+print(f"Soma das notas: {soma_notas:.2f}")
+print(f"Média: {media:.2f}")
+print(f"Diferença entre as notas: {diferenca:.2f}")
+print(f"Tempo de estudo: {horas_estudo} h e {minutos_restantes} min")
+print(f"Aproveitamento: {aproveitamento:.1f}%")
+print(f"Pontos de bônus: {pontos_bonus}")
